@@ -1,0 +1,8 @@
+<h1>Content Blocks</h1>
+<ul>
+  <% @content_blocks.each do |block| %>
+    <li>
+      <%= link_to block.title, content_block_path(block) %>
+    </li>
+  <% end %>
+</ul>
