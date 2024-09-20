@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_20_002949) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_20_003225) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,5 +21,23 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_20_002949) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["content_blockable_type", "content_blockable_id"], name: "index_content_blocks_on_content_blockable"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 end
