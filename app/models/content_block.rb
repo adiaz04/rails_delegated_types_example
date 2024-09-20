@@ -1,3 +1,3 @@
 class ContentBlock < ApplicationRecord
-  belongs_to :content_blockable, polymorphic: true
+  delegated_type :content_blockable, types: %w[Post Image Video], dependent: :destroy
 end
